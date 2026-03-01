@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "out": "docs/api",
+  "name": "vite-cli-ts API",
+  "readme": "none",
+  "plugin": ["typedoc-plugin-markdown"],
+  "theme": "markdown",
+  "exclude": ["**/*.test.ts", "**/setup.ts"],
+  "sort": ["source-order"],
+  "hideBreadcrumbs": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "githubPages": false
+}
