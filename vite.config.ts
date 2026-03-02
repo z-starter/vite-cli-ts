@@ -1,11 +1,12 @@
 import { defineConfig } from "vite"
 import { swc } from "@o.z/vite-plugin-swc"
 import path from "path"
-import { nodeExternals } from "rollup-plugin-node-externals"
 import versionPlugin from "./plugin/vite-plugin-version"
 
 export default defineConfig({
   build: {
+    target: "node18",
+    ssr: true,
     lib: {
       name: "vite-cli-ts",
       entry: [path.resolve(__dirname, "./src/index.ts")],
@@ -13,8 +14,11 @@ export default defineConfig({
         if (format === "es") return `${name}.js`
         else return `${name}.${format}`
       },
-      formats: ["es", "cjs"],
+      formats: ["es"],
     },
   },
-  plugins: [nodeExternals(), versionPlugin(), swc()],
+  plugins: [versionPlugin(), swc()],
+  ssr: {
+    noExternal: true,
+  },
 })

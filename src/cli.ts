@@ -5,7 +5,7 @@
  * @module
  */
 
-import yargs from "yargs"
+import yargs, { Arguments } from "yargs"
 import { hideBin } from "yargs/helpers"
 
 /**
@@ -69,7 +69,7 @@ export const getCli = async (): Promise<Cli> => {
       type: "boolean",
       describe: "Show version number",
     })
-    .check((argv) => {
+    .check((argv: Arguments) => {
       if (!argv._[0]) {
         throw new Error("Transform is required")
       }
