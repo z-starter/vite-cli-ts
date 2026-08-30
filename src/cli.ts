@@ -54,7 +54,7 @@ export const getCli = async (): Promise<Cli> => {
       "📦 A lightweight tool that performs various text transformations.\n" +
         "Pipe text into it or pass it as arguments.",
     )
-    .example("$0 upper 'hello world'", "HELLO WORLD")
+    .example("$0 upper hello world", "HELLO WORLD")
     .example("$0 reverse 'hello'", "olleh")
     .example("$0 slugify 'Hello World'", "hello-world")
     .example("$0 lower 'HELLO'", "hello")
